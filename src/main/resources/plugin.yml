@@ -1,0 +1,13 @@
+name: RegionRenameUtility
+version: '${project.version}'
+main: it.reo90.regionrenameutility.Main
+api-version: '1.17'
+author: Reo90
+depend: [WorldGuard]
+commands:
+  rgrename:
+    description: Utile per rinominare una region di WorldGuard
+    permission: regionrenameutility.rename
+    permission-message: "&cNon hai il permesso di eseguire questa azione"
+    aliases: [regionrename]
+    usage: "&6&l» &e&lREGIONRENAME &fUtilizzo corretto: /renameregion <id> <nuovo nome>"
