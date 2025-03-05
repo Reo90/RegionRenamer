@@ -1,13 +1,14 @@
-name: RegionRenameUtility
-version: '${project.version}'
+name: RegionRenamer
+version: '1.0'
 main: it.reo90.regionrenameutility.Main
 api-version: '1.17'
 author: Reo90
 depend: [WorldGuard]
+description: A powerful plugin designed to rename WorldGuard's Regions without having to recreate them.
 commands:
   rgrename:
-    description: Utile per rinominare una region di WorldGuard
+    description: Useful to rename a region.
     permission: regionrenameutility.rename
-    permission-message: "&cNon hai il permesso di eseguire questa azione"
+    permission-message: "&cYou are not permitted to use this command."
     aliases: [regionrename]
-    usage: "&6&l» &e&lREGIONRENAME &fUtilizzo corretto: /renameregion <id> <nuovo nome>"
+    usage: "&6&l» &e&lREGIONRENAME &fUsage: /renameregion <id> <newId>"

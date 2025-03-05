@@ -9,14 +9,14 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getLogger().info("[RegionRenameUtility] Plugin abilitato.");
+        Bukkit.getLogger().info("[RegionRenamer] Plugin enabled.");
         getCommand("rgrename").setExecutor(new RenameCommand());
         instance = this;
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getLogger().info("[RegionRenameUtility] Plugin disabilitato.");
+        Bukkit.getLogger().info("[RegionRenamer] Plugin disabled.");
     }
 
     public static Main getPluginInstance() {

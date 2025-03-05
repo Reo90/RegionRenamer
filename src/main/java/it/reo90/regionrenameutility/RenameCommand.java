@@ -36,7 +36,7 @@ public class RenameCommand implements CommandExecutor {
         // regex pattern
         String regexPattern = "^[a-z0-9_-]+$";
         if (!newId.matches(regexPattern)) {
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&l» &e&lREGIONRENAME &fPuoi utilizzare solo lettere latine minuscole, numeri e underscore."));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&l» &e&lREGIONRENAME &cYou can only use lowercase latin letters, underscores, dashes and numbers."));
             return true;
         }
 
@@ -60,18 +60,18 @@ public class RenameCommand implements CommandExecutor {
                     regionManager.load();
 
                 } catch (IOException e) {
-                    Bukkit.getLogger().warning("[RenameRegionUtility] Non è stato possibile salvare il config di WorldGuard");
+                    Bukkit.getLogger().warning("[RenameRegionUtility] WorldGuard regions.yml file could not be saved");
                 } catch (StorageException e) {
-                    Bukkit.getLogger().warning("[RenameRegionUtility] Non è stato possibile ricaricare in automatico il config delle region di WorldGuard");
+                    Bukkit.getLogger().warning("[RenameRegionUtility] WorldGuard regions.yml could not be loaded");
                 }
 
                 Bukkit.getScheduler().runTask(Main.getPluginInstance(), () -> {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&l» &e&lREGIONRENAME &fRegion " + id + " rinominata con successo!"));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&l» &e&lREGIONRENAME &fRegion " + id + " renamed to " + newId + " &asuccessfully"));
                 });
             }
             else {
                 Bukkit.getScheduler().runTask(Main.getPluginInstance(), () -> {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&l» &e&lREGIONRENAME &fLa region indicata non esiste oppure non ti trovi nel mondo di appartenenza"));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&l» &e&lREGIONRENAME &fThe region " + id + " &cdoesn't exist &for you are not in the correct world."));
                 });
             }
         });
